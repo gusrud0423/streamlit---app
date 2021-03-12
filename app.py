@@ -23,7 +23,7 @@ def main() :
     st.title('당뇨병 판정 예측')
 
     # 사이드바 메뉴
-    menu = ['Home', 'EDA']  #'ML'
+    menu = ['Home', 'EDA','ML']  #'ML'
     choice =  st.sidebar.selectbox('메뉴', menu)
 
     if choice == 'Home' :

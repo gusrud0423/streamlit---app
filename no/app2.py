@@ -31,3 +31,10 @@ def main() :
 
 if __name__ == '__main__' :
     main()
+
+    #$ nohup srteamlit rn app.py & 하면 전세계에서 누구나 접속 가능 
+
+    # $ ps -ef|grep streamlit streamlit
+    ubuntu 28371....
+
+    # kill 28371
