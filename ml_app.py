@@ -22,10 +22,10 @@ def run_ml_app() :
 
 #2. 예측한다
     # 2-1. 모델 불러오기
-    model =  joblib.load_model('data/best_model.pk1')
+    model =  joblib.load('data/best_model.pk1')
 
     # 2-2. 넘파이 어레이 만든다 
-    new_data = np.array( [ 0,0,0,0,0,0,0,0 ] )
+    new_data = np.array( [ 200,300,300,50,60,20,20,50 ] )
 
     # 2-3. 피처 스케일링 하자
     new_data = new_data.reshape(1,-1)
@@ -35,8 +35,12 @@ def run_ml_app() :
     y_pred =  model.predict(new_data)
 
     # 예측 결과는 스케일링 된 결과이므로 다시 돌려야 한다
-    st.write( y_pred[0][0] )
+    st.write( y_pred[0] )
     
+    if y_pred == 1 :
+        st.write('당뇨병입니다')
+    elif y_pred == 0 :
+        st.write('당뇨병 아닙니다')
     
 
 # #     #3. 결과를 화면에 보여준다
