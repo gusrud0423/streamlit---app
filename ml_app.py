@@ -20,13 +20,38 @@ def run_ml_app() :
 
     st.subheader('Machine Learning')
 
+    
+    # 임신횟수                             # 최소 몇~~ 부터 최대 몇 ~ 까지 범위지정
+    Pregnancies =  st.number_input('임신 횟수 입력', min_value=0)
+
+    # 공복혈당                             
+    Glucose=  st.number_input('공복혈당 입력', min_value= 0)
+
+    # 혈압
+    BloodPressure = st.number_input('혈압 입력', min_value=0)
+
+    # 피부 두께
+    SkinThickness = st.number_input('피부두께', min_value=0)
+
+    # 인슐린
+    Insulin = st.number_input('인슐린 수치 입력', min_value=0)
+
+    #BMI
+    BMI = st.number_input('BMI 수치 입력', min_value=0)
+
+    #Diabetes pedigree function
+    Diabetes_pedigree_function = st.number_input('DNA 영향력 입력', min_value=0)
+
+    #Age
+    Age = st.number_input('나이 입력', min_value=0)
+
 #2. 예측한다
     # 2-1. 모델 불러오기
     model =  joblib.load('data/best_model.pk1')
 
     # 2-2. 넘파이 어레이 만든다 
-    new_data = np.array( [ 200,300,300,50,60,20,20,50 ] )
-
+    new_data = np.array( [  Pregnancies, Glucose,  BloodPressure,SkinThickness, Insulin,BMI, Diabetes_pedigree_function, Age  ] )
+    
     # 2-3. 피처 스케일링 하자
     new_data = new_data.reshape(1,-1)
     
