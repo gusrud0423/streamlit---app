@@ -60,21 +60,23 @@ def run_ml_app() :
     y_pred =  model.predict(new_data)
 
     # 예측 결과는 스케일링 된 결과이므로 다시 돌려야 한다
-    st.write( y_pred[0] )
+    # st.write( y_pred[0] )
     
+    button = st.button('결과 보기')
+   
     if y_pred == 1 :
-        st.write('당뇨병입니다')
+        st.write( '당뇨병 입니다' )
     elif y_pred == 0 :
-        st.write('당뇨병 아닙니다')
+        st.write( '당뇨병 아닙니다')
     
 
-# #     #3. 결과를 화면에 보여준다
-# #     button =  st.button('결과보기')
-# #     if button :
-# #         st.write('예측 결과입니다 {} 이면 '.format(y_pred_orginal[0,0]))
-# #                               # 천단위마다 콤마 찍어서 나타내라
-# #                               # 소수점 밑으로 2자리까지만 나타내라
-# # # 
+    # #3. 결과를 화면에 보여준다
+    # button =  st.button('결과보기')
+    # if button :
+    #     st.write('당신은 {}'.format(y_pred[0,0]))
+    #                           # 천단위마다 콤마 찍어서 나타내라
+    #                           # 소수점 밑으로 2자리까지만 나타내라
+# 
 
     
 
